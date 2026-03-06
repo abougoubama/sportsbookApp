@@ -5,7 +5,7 @@
   </div>
 
   <div class="match-list__content">
-    @for (match of matches; track match.id) {
+    @for (match of matches$ | async; track match.id) {
         <article class="match-card">
         <div class="match-card__top">
             <span class="match-card__sport">{{ match.sport }}</span>
