@@ -1,2 +1,42 @@
-<h2>Match list</h2>
-<p>match-list works!</p>
+<div class="match-list">
+  <div class="match-list__header">
+    <h2>Matchs Disponible</h2>
+    <p>Sélectionner une côte pour l'ajouter au bet slip</p>
+  </div>
+
+  <div class="match-list__content">
+    @for (match of matches; track match.id) {
+        <article class="match-card">
+        <div class="match-card__top">
+            <span class="match-card__sport">{{ match.sport }}</span>
+            <span class="match-card__competition">{{ match.competition }}</span>
+        </div>
+
+        <div class="match-card__teams">
+            <h3>{{ match.teams.a }} vs {{ match.teams.b }}</h3>
+            <p>{{ match.startDate | date: 'dd/MM/yyyy HH:mm' }}</p>
+        </div>
+
+        <div class="match-card__odds">
+            <button type="button" class="odd-button" (click)="selectOdd(match, 'homeWin')">
+            {{ match.teams.a }} {{ match.odds.homeWin }}
+            </button>
+
+            @if(match.odds.draw !== undefined){
+                <button
+                type="button"
+                class="odd-button"
+                (click)="selectOdd(match, 'draw')"
+                >
+                Draw {{ match.odds.draw }}
+                </button>
+            }
+
+            <button type="button" class="odd-button" (click)="selectOdd(match, 'awayWin')">
+            {{ match.teams.b }} {{ match.odds.awayWin }}
+            </button>
+        </div>
+        </article>
+    }
+  </div>
+</div>
