@@ -7,14 +7,3 @@ export interface BetSelection {
   libellePari: string;
   cote: number;//cote du pari que l'utilisateur a sélectionné
 }
-
-//exemple 
-/*
-{
-  matchId: '1',
-  matchLabel: 'PSG vs Marseille',
-  outcome: 'homeWin',
-  outcomeLabel: 'PSG',
-  odd: 1.85
-}
-*/

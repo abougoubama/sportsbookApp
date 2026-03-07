@@ -2,6 +2,97 @@
   display: block;
 }
 
-h2 {
-  margin-top: 0;
+.selection-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selection-header h2 {
+  margin: 0 0 8px;
+  color: green;
+}
+
+.selection-header p {
+  margin: 0;
+  color: #475569;
+}
+
+.card-pari {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #dbe3ee;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.match-info {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.match-info h3 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.match-info p {
+  margin: 0;
+  font-size: inherit;
+  border: 0.8px black solid;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #e82222;
+  color: white;
+}
+
+.pari-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pari-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pari-content button {
+  border: 1px solid #15803d;
+  background: green;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.pari-content button span{
+  padding: 30px;
+  font-size: x-large;
+}
+
+.pari-content button:hover {
+  background: #0f8a2d;
+  transform: translateY(-1px);
+}
+
+.pari-content span {
+  color: white;
+}
+
+#pari-selected {
+  color: #eab308;
+  font-weight: 600;
 }

@@ -57,3 +57,80 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+# Sports Betting Bet Slip
+This project is a sports betting technical test built with Angular.
+
+The application displays a list of sports matches with their odds and allows the user to select one odd per match, manage a bet slip, and see a potential gain based on the entered stake.
+
+## Features
+
+- Display a list of matches from mock data
+- Display odds for each match
+- Select one odd per match
+- Replace the selected odd for the same match
+- Remove a selected odd by clicking on it again
+- Display the current bet slip
+- Enter a stake
+- Compute the potential gain
+
+## Tech stack
+
+- Angular
+- TypeScript
+- SCSS
+- RxJS
+
+- Angular standalone components
+
+## Run the project
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+## Run the project
+npm start
+
+## Run the test
+
+npm test
+
+Architecture choices
+
+The application is split into dedicated components:
+
+MainLayoutComponent: handles the global page layout
+
+MatchListComponent: displays matches and odds
+
+BetSlipComponent: displays selected bets and the summary
+
+A shared service is used to centralize the bet slip state.
+
+Selections are stored by matchId to ensure that only one odd can be selected per match.
+
+Functional assumptions
+
+The application is based on mock data
+
+A user can select multiple matches
+
+Only one odd can be selected per match
+
+The stake is global to the bet slip
+
+The potential gain is calculated from the selected odds and the entered stake
+
+Possible improvements
+
+Add more unit tests
+
+Improve responsive behavior
+
+Connect to a real backend API
+
+Improve accessibility
+
