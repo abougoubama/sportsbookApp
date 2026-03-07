@@ -21,11 +21,15 @@ export class BetSlip {
   }
 
   //validation du champs
-  sendMise(event:number, cote:number ){
-    if(event !== 0){
-      of(event).pipe(
-        switchMap((e)=>"test")
-      )
+  sendMise(event: Event, cote: number) {
+
+    const input = event.target as HTMLInputElement;
+    const mise = Number(input.value);
+
+    if (!mise) {
+      this.gain = 0;
+      return;
     }
+    this.gain = mise * cote;
   }
 }

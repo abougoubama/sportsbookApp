@@ -18,10 +18,15 @@
   color: #475569;
 }
 
+.card-pari h3{
+  margin: 0 0 6px;
+    font-size: 18px;
+}
+
 .card-pari {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
   padding: 16px;
   border: 1px solid #dbe3ee;
   border-radius: 12px;
@@ -33,7 +38,8 @@
   flex-direction: row;
   gap: 6px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .match-info h3 {
@@ -46,32 +52,39 @@
 .match-info p {
   margin: 0;
   font-size: inherit;
-  border: 0.8px black solid;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #e82222;
-  color: white;
 }
+
 
 .pari-info {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.pari-content {
+.match-info h2{
+  margin: 0;
+  font-size: inherit;
+  border: 0.8px black solid;
+  padding: 6px;
+  border-radius: 10px;
+  background-color: #e82222;
+  color: white;
+}
+
+/*.pari-content {
   display: flex;
   align-items: center;
   gap: 12px;
-}
+}*/
 
-.pari-content button {
+button {
   border: 1px solid #15803d;
   background: green;
   border-radius: 10px;
-  padding: 10px 16px;
+  padding: 4px 4px;
   cursor: pointer;
   font: inherit;
   font-weight: 600;
@@ -79,7 +92,7 @@
 }
 
 .pari-content button span{
-  padding: 30px;
+  padding: 16px;
   font-size: x-large;
 }
 
@@ -92,7 +105,14 @@
   color: white;
 }
 
-#pari-selected {
-  color: #eab308;
+.pari-selected {
+  background-color: #eab308;
   font-weight: 600;
+  padding: 16px;
+  font-size: x-large;
+}
+
+
+.pari-selected span {
+  color: white;
 }
