@@ -9,15 +9,15 @@
         <h3>{{pari.libellePari}}</h3>
         <div class="match-info">
             <h3>{{pari.matchLabel}}</h3>
-            <h2>equipe pari</h2>
+            <h2>{{pari.libelleCote}}</h2>
             <div class="pari-content">
                 <button><span>{{pari.cote}}</span></button>
             </div>
         </div>
 
         <div class="pari-info">
-            <div class="pari-selected"><span>{{gain}}</span></div>
-            <input type="number" min="0" step="0.01" placeholder="Entrer la mise" (input)="sendMise($event, pari.cote)"/>
+            <div><span>gain:</span><span class="pari-selected">{{pari.gain}}</span><span>mise:</span><span class="pari-selected">{{pari.mise}}</span></div>
+            <input type="number" min="0" max="1000" step="0.01" placeholder="Entrer la mise" (input)="sendMise($event, pari)"/>
         </div>
     </div>
     }

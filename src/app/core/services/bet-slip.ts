@@ -22,5 +22,12 @@ export class BetSlipService {
 readonly selectionsList$ = this.selections$.pipe(
   map((matchId) => Object.values(matchId))
 );
+
+updateBetSelection(newBetSelection: BetSelection):void{
+  const idToUpdate = newBetSelection.matchId;
+  this.selectionsSubject.value[idToUpdate]= {...newBetSelection}
+  this.selectionsSubject.next(this.selectionsSubject.value);
+}
+
   
 }

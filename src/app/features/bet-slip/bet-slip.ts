@@ -21,8 +21,9 @@ export class BetSlip {
   }
 
   //validation du champs
-  sendMise(event: Event, cote: number) {
+  sendMise(event: Event, pari:BetSelection) {
 
+    const cote = pari.cote
     const input = event.target as HTMLInputElement;
     const mise = Number(input.value);
 
@@ -31,5 +32,7 @@ export class BetSlip {
       return;
     }
     this.gain = mise * cote;
+    const newBetSelection = {...pari, gain:this.gain, mise: mise}
+    this.betSlipService.updateBetSelection(newBetSelection)
   }
 }

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { MatchService } from '../../core/services/match';
 import { BetSlipService } from '../../core/services/bet-slip';
 
+
 @Component({
   selector: 'app-match-list',
   standalone:true,
@@ -27,13 +28,13 @@ export class MatchList implements OnInit {
 
   }
 
-  getCote(match: Match, typePari: TypePari):number{
+  getCote(match: Match, typePari: TypePari):{libelleEquipe:string,cote:number}{
     if(typePari === "awayWin"){
-      return match.odds.awayWin
+      return { libelleEquipe: match.teams.b,cote:match.odds.awayWin}
     }else if(typePari === "draw"){
-      return match.odds.draw?match.odds.draw:0;
+      return { libelleEquipe: typePari,cote: match.odds.draw?match.odds.draw:0};
     }else{
-      return match.odds.homeWin
+      return { libelleEquipe: match.teams.a,cote: match.odds.homeWin};
     }
   }
 
@@ -43,7 +44,10 @@ export class MatchList implements OnInit {
     matchLabel: match.competition,
     typePari: typePari,
     libellePari: match.teams.a + " vs " + match.teams.b,
-    cote: this.getCote(match, typePari)
+    libelleCote: this.getCote(match, typePari).libelleEquipe,
+    cote: this.getCote(match, typePari).cote,
+    gain: 0,
+    mise:0
   }
 
   const currentSelection = this.betSlipService.getSelectionPariValue();
