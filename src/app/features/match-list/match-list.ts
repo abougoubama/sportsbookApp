@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { MatchService } from '../../core/services/match';
 import { BetSlipService } from '../../core/services/bet-slip';
+import { MATCH_LIST_LABELS } from '../../constants/constants-sportBookApp';
 
 
 @Component({
@@ -15,6 +16,7 @@ import { BetSlipService } from '../../core/services/bet-slip';
   styleUrl: './match-list.scss',
 })
 export class MatchList implements OnInit {
+    matchListlabels = MATCH_LIST_LABELS;
 
   protected  matches$!:Observable<Match[]>;
   private readonly selectionsByMatchId: Record<string, BetSelection> = {};

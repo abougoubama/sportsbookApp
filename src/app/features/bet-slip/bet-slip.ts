@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BetSlipService } from '../../core/services/bet-slip';
-import { Observable, of, switchMap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { BetSelection } from '../../core/models/bet-selection.model';
 import { CommonModule } from '@angular/common';
+import { BET_SLIP_LABELS} from '../../constants/constants-sportBookApp'
 
 @Component({
   selector: 'app-bet-slip',
@@ -12,6 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './bet-slip.scss',
 })
 export class BetSlip {
+  betSlipLabel = BET_SLIP_LABELS;
 
   selectionPari$!:Observable<BetSelection[]>;
   gain: number = 0;

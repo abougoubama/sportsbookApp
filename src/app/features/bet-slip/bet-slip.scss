@@ -16,103 +16,75 @@
 .selection-header p {
   margin: 0;
   color: #475569;
-}
+}   
 
-.card-pari h3{
-  margin: 0 0 6px;
-    font-size: 18px;
-}
-
-.card-pari {
+.bet-card{
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 16px;
-  border: 1px solid #dbe3ee;
-  border-radius: 12px;
-  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
 }
 
-.match-info {
+.bet-header{
   display: flex;
   flex-direction: row;
-  gap: 6px;
   align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  color: rgb(58,170,53);
 }
 
-.match-info h3 {
-  margin: 0;
-  font-size: inherit;
-  font-weight: 600;
-  color: #0f172a;
+.bet-header h3{
+  margin: 0 0 6px;
 }
 
-.match-info p {
-  margin: 0;
-  font-size: inherit;
-}
-
-
-.pari-info {
+.bet-selection{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.match-info h2{
+.bet-selection h3{
   margin: 0;
-  font-size: inherit;
-  border: 0.8px black solid;
-  padding: 6px;
-  border-radius: 10px;
-  background-color: #e82222;
+  color: rgb(58, 170, 53);
+}
+
+.bet-selection button{
+  background: #147b45;
   color: white;
-}
-
-/*.pari-content {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}*/
-
-button {
-  border: 1px solid #15803d;
-  background: green;
-  border-radius: 10px;
-  padding: 4px 4px;
   cursor: pointer;
-  font: inherit;
-  font-weight: 600;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  padding: 10px 14px;
+  border-radius: 8px;
 }
 
-.pari-content button span{
-  padding: 16px;
-  font-size: x-large;
+.bet-mise{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px
 }
 
-.pari-content button:hover {
-  background: #0f8a2d;
-  transform: translateY(-1px);
+.bet-input{
+  border: 1px solid lightgreen;
+  padding: 10px 14px;
+  border-radius: 20px;
 }
 
-.pari-content span {
-  color: white;
+input:focus {
+  background-color: lightyellow;
+  color: black;
 }
 
-.pari-selected {
-  background-color: #eab308;
-  font-weight: 600;
-  padding: 16px;
-  font-size: x-large;
+.bet-info-pari{
+  display:flex;
+  gap:16px;
+  align-items:center;
 }
 
-
-.pari-selected span {
-  color: white;
+.pari-selected{
+  font-weight:600;
+  color:#147b45;
 }
