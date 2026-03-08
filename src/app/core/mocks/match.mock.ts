@@ -12,8 +12,8 @@ export const MATCHES_MOCK: Match[] = [
     },
     odds: {
       homeWin: 1.85,
-      draw: 3.40,
-      awayWin: 4.20
+      draw: 3.4,
+      awayWin: 4.2
     },
     startDate: '2026-04-10T18:00:00Z'
   },
@@ -26,8 +26,8 @@ export const MATCHES_MOCK: Match[] = [
       b: 'Djokovic'
     },
     odds: {
-      homeWin: 2.10,
-      awayWin: 1.70
+      homeWin: 2.1,
+      awayWin: 1.7
     },
     startDate: '2026-04-10T18:00:00Z'
   },
@@ -40,9 +40,9 @@ export const MATCHES_MOCK: Match[] = [
       b: 'Lille'
     },
     odds: {
-        homeWin : 1.70,
-        draw : 2.80,
-        awayWin : 3.20
+        homeWin : 1.7,
+        draw : 2.8,
+        awayWin : 3.2
     },
     startDate: '2026-04-03T10:30:00Z'
   },

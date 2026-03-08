@@ -18,7 +18,6 @@ export class BetSlipService {
   return this.selectionsSubject.value;
 }
 
-//transforme le record (objet prop - value) en tableau
 readonly selectionsList$ = this.selections$.pipe(
   map((matchId) => Object.values(matchId))
 );
@@ -28,6 +27,4 @@ updateBetSelection(newBetSelection: BetSelection):void{
   this.selectionsSubject.value[idToUpdate]= {...newBetSelection}
   this.selectionsSubject.next(this.selectionsSubject.value);
 }
-
-  
 }

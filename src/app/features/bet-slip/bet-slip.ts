@@ -22,7 +22,6 @@ export class BetSlip {
     this.selectionPari$ = this.betSlipService.selectionsList$;
   }
 
-  //validation du champs
   sendMise(event: Event, pari:BetSelection) {
 
     const cote = pari.cote

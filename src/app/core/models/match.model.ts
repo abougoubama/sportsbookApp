@@ -14,7 +14,7 @@ export interface Teams {
 }
 
 export interface Odds {
-  homeWin: number; //l’équipe à domicile gagne
-  draw?: number; //cote du match null
-  awayWin: number; //l'equipe a l'exterieur gagne
+  homeWin: number; 
+  draw?: number;
+  awayWin: number; 
 }
