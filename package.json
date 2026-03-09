@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "jest --config jest.config.js"
   },
   "prettier": {
     "printWidth": 100,
@@ -28,15 +28,21 @@
     "@angular/core": "^21.1.0",
     "@angular/forms": "^21.1.0",
     "@angular/platform-browser": "^21.1.0",
+    "@angular/platform-browser-dynamic": "^21.2.1",
     "@angular/router": "^21.1.0",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "zone.js": "^0.16.1"
   },
   "devDependencies": {
     "@angular/build": "^21.1.4",
     "@angular/cli": "^21.1.4",
     "@angular/compiler-cli": "^21.1.0",
-    "jsdom": "^27.1.0",
+    "@types/jest": "^30.0.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "jest-preset-angular": "^16.1.1",
+    "jsdom": "^27.4.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"
   }

@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { BetSlipService } from './bet-slip';
 
-
 describe('BetSlip', () => {
   let service: BetSlipService;
 
@@ -14,3 +13,4 @@ describe('BetSlip', () => {
     expect(service).toBeTruthy();
   });
 });
+
