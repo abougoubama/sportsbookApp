@@ -56,7 +56,7 @@ export class MatchList implements OnInit {
   if(currentSelection[match.id] === undefined){
     this.selectionsByMatchId[match.id] = betSelection;
   }else{
-    const pariCurrentMatch =this.selectionsByMatchId[match.id].typePari;
+    const pariCurrentMatch =currentSelection[match.id].typePari;
     if(pariCurrentMatch === typePari){
       delete this.selectionsByMatchId[match.id];
     }else{

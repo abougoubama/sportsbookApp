@@ -104,6 +104,4 @@ describe('MatchList', () => {
     expect(component.selectionsByMatchId[idSelectedMatch].cote).toBe(4.2);
     expect(component.selectionsByMatchId[idSelectedMatch].libellePari).toBe("PSG vs Marseille");
   });
-
-
 });
