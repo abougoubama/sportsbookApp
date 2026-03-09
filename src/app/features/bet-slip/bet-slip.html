@@ -13,7 +13,13 @@
         </div>
 
         <div class="bet-selection">
-            <h3>{{pari.libelleCote}}</h3>
+            @if( pari.libelleCote !== "draw"){
+                <h3><img [src]="'/' + pari.libelleCote + '.png'" alt="maillot logo" class="team-jersey">
+                {{pari.libelleCote}}</h3>
+            }@else{
+                <h3><span class="match-nul">match nul</span>
+                {{pari.libelleCote}}</h3>
+            }
             <button><span>{{pari.cote}}</span></button>
         </div>
 
