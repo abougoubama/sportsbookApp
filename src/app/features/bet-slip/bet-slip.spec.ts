@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BetSlip } from './bet-slip';
 import { BetSelection } from '../../core/models/bet-selection.model';
 import { BetSlipService } from '../../core/services/bet-slip';
-import { EMPTY, of } from 'rxjs';
+import { of } from 'rxjs';
 
 
 let  pari:BetSelection ={

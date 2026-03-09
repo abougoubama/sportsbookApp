@@ -51,15 +51,15 @@ describe('BetSlip', () => {
   expect(result[pari.matchId].mise).toBe(0.19);
   });
 
-  it('should return selections as array', (done) => {
+  it('should return selections as array', () => {
   service.updateBetSelection(pari);
   service.updateBetSelection(pari2);
   service.selectionsList$.subscribe(list => {
     expect(list.length).toBe(2);});
 });
 
-it('should update the selection bet list', (done) => {
-  selectionBetListMock[4]= {...pari, matchId:'4', matchLabel:'test'};
+it('should update the selection bet list', () => {
+  selectionBetListMock = {'4': { ...pari, matchId: '4', matchLabel: 'test' }};
   service.setSelectionPari(selectionBetListMock);
   service.selectionsList$.subscribe((resul) => {
     expect(resul.length).toBe(4);
