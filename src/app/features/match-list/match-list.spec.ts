@@ -5,7 +5,7 @@ import { Match } from '../../core/models/match.model';
 import { BetSelection, TypePari } from '../../core/models/bet-selection.model'
 import { MatchService } from '../../core/services/match';
 import { MATCHES_MOCK } from '../../core/mocks/match.mock';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { BetSlipService } from '../../core/services/bet-slip';
 
 let typePari: TypePari = 'homeWin';
@@ -45,11 +45,16 @@ const betSelection_mock : BetSelection = {
   }
 
   class MockBetSlipService{
+    selectionsSubject = new BehaviorSubject<any>({})
     listSelectionMock :Record<string, BetSelection> = { 1: betSelection_mock }
 
       getSelectionPariValue(): Record<string, BetSelection> {
         return this.listSelectionMock;
     }
+
+    setSelectionPari(selections:any): void {
+    this.selectionsSubject.next(selections);
+  }
   }
 
 describe('MatchList', () => {

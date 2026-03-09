@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BetSlip } from './bet-slip';
 import { BetSelection } from '../../core/models/bet-selection.model';
 import { BetSlipService } from '../../core/services/bet-slip';
-import { of } from 'rxjs';
+import { EMPTY, of } from 'rxjs';
 
 
 let  pari:BetSelection ={
@@ -29,8 +29,11 @@ let  pari2:BetSelection ={
 
 class MockBetSlipService{
 
-  readonly selectionsList$ = of([pari, pari2])
+  readonly selectionsList$ = of([pari, pari2]);
 
+  updateBetSelection(newBetSelection: any):void{
+    const doNothing = {};
+  }
 }
 
 describe('BetSlip', () => {
