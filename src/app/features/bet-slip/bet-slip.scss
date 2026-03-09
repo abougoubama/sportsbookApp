@@ -34,6 +34,7 @@
   align-items: center;
   justify-content: space-between;
   color: rgb(58,170,53);
+  flex-wrap: wrap;
 }
 
 .bet-header h3{
@@ -45,6 +46,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .bet-selection h3{
@@ -64,7 +66,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .bet-input{

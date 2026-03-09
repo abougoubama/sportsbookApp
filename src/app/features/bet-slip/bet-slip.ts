@@ -28,7 +28,7 @@ export class BetSlip {
     const input = event.target as HTMLInputElement;
     const mise = Number(input.value);
 
-    if (!mise) {
+    if (!mise && mise < 0) {
       this.gain = 0;
       return;
     }

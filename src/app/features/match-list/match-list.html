@@ -8,12 +8,15 @@
     @for (match of matches$ | async; track match.id) {
         <article class="match-card">
         <div class="match-card__top">
-            <span class="match-card__sport">{{ match.sport }}</span>
+            <span class="match-card__sport"><img class="icon-svg icon-svg--sport" alt="sport logo" [src]="'/' + match.sport + '.svg'">{{ match.sport }}</span>
             <span class="match-card__competition">{{ match.competition }}</span>
         </div>
 
         <div class="match-card__teams">
-            <h3>{{ match.teams.a }} vs {{ match.teams.b }}</h3>
+            <h3><img [src]="'/' + match.teams.a + '.png'" alt="maillot logo" class="team-jersey">
+                {{ match.teams.a }} vs {{ match.teams.b }}
+            <img [src]="'/' + match.teams.b + '.png'" alt="maillot logo" class="team-jersey">
+            </h3>
             <p>{{ match.startDate | date: 'dd/MM/yyyy HH:mm' }}</p>
         </div>
 

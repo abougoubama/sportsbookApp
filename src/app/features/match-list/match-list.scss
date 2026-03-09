@@ -35,6 +35,12 @@
   color: #64748b;
 }
 
+.match-card__top .icon-svg--sport {
+    width: 16px;
+    height: 13px;
+    margin-right: 8px;
+}
+
 .match-card__teams h3 {
   margin: 0 0 6px;
   font-size: 18px;
@@ -64,4 +70,9 @@
 
 .odd-button:hover {
   background: #eef2ff;
+}
+
+.team-jersey {
+    width: auto;
+    height: 24px;
 }
