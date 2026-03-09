@@ -16,10 +16,10 @@ import { MATCH_LIST_LABELS } from '../../constants/constants-sportBookApp';
   styleUrl: './match-list.scss',
 })
 export class MatchList implements OnInit {
-    matchListlabels = MATCH_LIST_LABELS;
+  matchListlabels = MATCH_LIST_LABELS;
 
-  protected  matches$!:Observable<Match[]>;
-  private readonly selectionsByMatchId: Record<string, BetSelection> = {};
+  public  matches$!:Observable<Match[]>;
+  public readonly selectionsByMatchId: Record<string, BetSelection> = {};
 
   constructor(private readonly matchService:MatchService, private readonly betSlipService:BetSlipService) {
 
@@ -40,7 +40,7 @@ export class MatchList implements OnInit {
     }
   }
 
-  selectOdd(match: Match, typePari: TypePari) {
+  selectOdd(match: Match, typePari: TypePari):void {
     const betSelection = {
     matchId: match.id,
     matchLabel: match.competition,

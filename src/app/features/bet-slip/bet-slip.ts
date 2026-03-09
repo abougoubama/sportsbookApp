@@ -22,7 +22,7 @@ export class BetSlip {
     this.selectionPari$ = this.betSlipService.selectionsList$;
   }
 
-  sendMise(event: Event, pari:BetSelection) {
+  sendMise(event: Event, pari:BetSelection):void {
 
     const cote = pari.cote
     const input = event.target as HTMLInputElement;
