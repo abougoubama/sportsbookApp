@@ -23,11 +23,11 @@
                     <span>{{pari.libelleCote}}</span>
                 </h3>
             }
-            <button><span>{{pari.cote}}</span></button>
+            <div class="cote"><span>{{pari.cote}}</span></div>
         </div>
 
         <div class="bet-mise">
-            <div>
+            <div class="input-content" >
             <input type="number" 
                 id="mise"
                 min="0" 
@@ -37,6 +37,11 @@
                 placeholder={{betSlipLabel.placeholderMise}}
                 (input)="sendMise($event, pari)"
             />
+            @if(pari.misMax){
+                <div class="errorMsg">
+                    <span>Vous avez atteind le montant limite</span>
+                </div>
+            }
             </div>
             <div class="bet-info-pari">
                 <span>{{betSlipLabel.gain}}:</span><span class="pari-selected">{{pari.gain |currency:'EUR':'symbol':'1.2-2'}}</span>

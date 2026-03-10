@@ -8,7 +8,7 @@
     @for (match of matches$ | async; track match.id) {
         <article class="match-card">
         <div class="match-card__top">
-            <span class="match-card__sport"><img class="icon-svg icon-svg--sport" alt="sport logo" [src]="'/' + match.sport + '.svg'">{{ match.sport }}</span>
+            <span class="match-card__sport"><img class="icon-svg icon-svg--sport" alt="sport logo" [src]="'/' + match.sport + '.svg'"><span>{{ match.sport }}</span></span>
             <span class="match-card__competition">{{ match.competition }}</span>
         </div>
 

@@ -3,6 +3,7 @@ import { BetSlip } from './bet-slip';
 import { BetSelection } from '../../core/models/bet-selection.model';
 import { BetSlipService } from '../../core/services/bet-slip';
 import { of } from 'rxjs';
+import { inject } from '@angular/core';
 
 
 let  pari:BetSelection ={
@@ -13,7 +14,8 @@ let  pari:BetSelection ={
   libelleCote: 'PSG',
   cote: 1.85,
   gain : 0.35150000000000003,
-  mise:0.19
+  mise:0.19,
+  misMax:false
 }
 
 let  pari2:BetSelection ={
@@ -24,7 +26,8 @@ let  pari2:BetSelection ={
   libelleCote: 'Djokovic',
   cote: 1.7,
   gain : 0,
-  mise:0
+  mise:0,
+  misMax:false
 }
 
 class MockBetSlipService{
@@ -65,7 +68,9 @@ describe('BetSlip', () => {
     })
   });
 
-  it('should send mise of user', () => {
+  it('should new send mise of user', () => {
+  const mockService = TestBed.inject(BetSlipService);
+  const updateBetSelectionSpy = jest.spyOn(mockService, 'updateBetSelection')
   const event: any = {
     target: {
       value: '10'
@@ -73,5 +78,31 @@ describe('BetSlip', () => {
   };
   component.sendMise(event, pari);
   expect(component.gain).toBe(pari.cote * 10);
+  expect(updateBetSelectionSpy).toHaveBeenCalled();
 });
+
+it('should not send mise of user when it is below 0', () => {
+  const event: any = {
+    target: {
+      value: '-3'
+    }
+  };
+  component.sendMise(event, pari);
+  expect(component.gain).toBe(0);
+});
+
+it('should send new mise max of user when it is over the mise MAX', () => {
+  const mockService = TestBed.inject(BetSlipService);
+  const updateBetSelectionSpy = jest.spyOn(mockService, 'updateBetSelection')
+  const event: any = {
+    target: {
+      value: '2000000000'
+    }
+  };
+  component.sendMise(event, pari);
+  expect(component.gain).toBe(pari.cote * component.MAX);
+  expect(updateBetSelectionSpy).toHaveBeenCalled();
+});
+
+
 });

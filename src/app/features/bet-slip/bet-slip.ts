@@ -17,23 +17,31 @@ export class BetSlip {
 
   selectionPari$!:Observable<BetSelection[]>;
   gain: number = 0;
+  MAX = 999999;
+
 
   constructor(private readonly betSlipService: BetSlipService){
     this.selectionPari$ = this.betSlipService.selectionsList$;
   }
 
   sendMise(event: Event, pari:BetSelection):void {
-
     const cote = pari.cote
     const input = event.target as HTMLInputElement;
-    const mise = Number(input.value);
+    let mise = Number(input.value);
 
-    if (!mise && mise < 0) {
+    if (Number.isNaN(mise) || mise < 0) {
       this.gain = 0;
+      pari.misMax = false;
       return;
-    }
+    }else if (mise > this.MAX) {
+      mise = this.MAX;
+      input.value = Number(this.MAX).toString();
+      pari.misMax = true;
+  } else {
+    pari.misMax = false;
+  }
     this.gain = mise * cote;
-    const newBetSelection = {...pari, gain:this.gain, mise: mise}
+    const newBetSelection = {...pari, gain:this.gain, mise: mise, miseMax:pari.misMax}
     this.betSlipService.updateBetSelection(newBetSelection)
   }
 }

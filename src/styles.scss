@@ -1,4 +1,31 @@
 :root{
+
+  /*color for bet slip & match*/
   --color-green-dark: #0e5f31;
-  --color-main-header: #147b45
+  --color-main-header: #147b45;
+  --color-header-title:rgb(0,128,0);
+  --color-header-subtitle:#475569;
+  --color-bet-info-title:rgb(58,170,53);
+
+
+  --color-border-card:#e2e8f0;
+  --color-backdroung-card:#fff;
+  --color-selection:rgb(58, 170, 53);
+  --color-bet-selection-cote:#147b45;
+  --color-bet-selection-cote-text:white;
+  --color-bet-input:lightgreen;
+  --color-bet-input-focus-background:lightyellow;
+  --color-bet-input-focus:black;
+  --color-bet-pari-selected:#147b45; 
+
+  --color-bet-input-content-error:red;
+
+  /*color for match  */
+  --color-match-info-title: #64748b;
+  --color-odd-button-border:#cbd5e1;
+  --color-odd-button-background: #f8fafc;
+  --color-odd-button-hover:#eef2ff;
+
+
+
 }

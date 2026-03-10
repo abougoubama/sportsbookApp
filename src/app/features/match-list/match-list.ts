@@ -50,7 +50,8 @@ export class MatchList implements OnInit {
     libelleCote: this.getCote(match, typePari).libelleEquipe,
     cote: this.getCote(match, typePari).cote,
     gain: currentSelection[match.id]?currentSelection[match.id].gain: 0,
-    mise: currentSelection[match.id]?currentSelection[match.id].mise: 0
+    mise: currentSelection[match.id]?currentSelection[match.id].mise: 0,
+    misMax: false
   }
 
   if(currentSelection[match.id] === undefined){

@@ -9,4 +9,5 @@ export interface BetSelection {
   cote: number;
   gain:number;
   mise:number;
+  misMax:boolean;
 }

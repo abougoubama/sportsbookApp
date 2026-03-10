@@ -35,6 +35,7 @@ const betSelection_mock : BetSelection = {
   cote: 1.85,
   gain:0,
   mise:0,
+  misMax:false
 }
 
 
