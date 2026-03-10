@@ -1,0 +1,122 @@
+:host {
+  display: block;
+}
+
+.selection-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selection-header h2 {
+  margin: 0 0 8px;
+  color: var(--color-header-title);
+}
+
+.selection-header p {
+  margin: 0;
+  color: var(--color-header-subtitle);
+}   
+
+.bet-card{
+  background: var(--color-backdroung-card);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--color-border-card);
+}
+
+.bet-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-bet-info-title);
+  flex-wrap: wrap;
+}
+
+.bet-header h3{
+  margin: 0 0 6px;
+}
+
+.bet-selection{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.bet-selection h3{
+  margin: 0;
+  color: var(--color-selection);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bet-selection .cote{
+  background: var(--color-bet-selection-cote);
+  color: var( --color-bet-selection-cote-text);
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.bet-mise{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.bet-input{
+  border: 1px solid var(--color-bet-input);
+  padding: 10px 14px;
+  border-radius: 20px;
+}
+
+input:focus {
+  background-color: var(--color-bet-input-focus-background);
+  color: var(--color-bet-input-focus);
+}
+
+.bet-info-pari{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  flex-wrap: wrap;
+}
+
+.pari-selected{
+  font-weight:600;
+  color: var(--color-bet-pari-selected);
+}
+
+.team-jersey {
+    width: auto;
+    height: 24px;
+}
+
+.match-nul{
+    color: var(--color-bet-selection-cote-text);
+    background: var(--color-header-title);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: xx-small;
+}
+
+.input-content{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.errorMsg{
+  color: var(--color-bet-input-content-error);
+  font-size: smaller;
+}

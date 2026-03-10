@@ -1,0 +1,53 @@
+<div class="selection-main-content">
+    <div class="selection-header">
+        <h2>{{betSlipLabel.title}}</h2>
+        <p>{{betSlipLabel.subtitle}}</p>
+    </div>
+
+    @for (pari of selectionPari$ | async; track pari.matchId) {
+    <div class="bet-card">
+
+        <div class="bet-header">
+             <h3>{{pari.libellePari}}</h3>
+             <h3>{{pari.matchLabel}}</h3>
+        </div>
+
+        <div class="bet-selection">
+            @if( pari.libelleCote !== "draw"){
+                <h3><img [src]="'/' + pari.libelleCote + '.png'" alt="maillot logo" class="team-jersey">
+                 <span>{{pari.libelleCote}}</span>
+                </h3>
+            }@else{
+                <h3>
+                    <span class="match-nul">match nul</span>
+                    <span>{{pari.libelleCote}}</span>
+                </h3>
+            }
+            <div class="cote"><span>{{pari.cote}}</span></div>
+        </div>
+
+        <div class="bet-mise">
+            <div class="input-content" >
+            <input type="number" 
+                id="mise"
+                min="0" 
+                max="999999" 
+                step="0.01" 
+                class="bet-input"
+                placeholder={{betSlipLabel.placeholderMise}}
+                (input)="sendMise($event, pari)"
+            />
+            @if(pari.misMax){
+                <div class="errorMsg">
+                    <span>Vous avez atteind le montant limite</span>
+                </div>
+            }
+            </div>
+            <div class="bet-info-pari">
+                <span>{{betSlipLabel.gain}}:</span><span class="pari-selected">{{pari.gain |currency:'EUR':'symbol':'1.2-2'}}</span>
+                <span>{{betSlipLabel.mise}}:</span><span class="pari-selected">{{pari.mise | currency:'EUR':'symbol':'1.2-2'}}</span>
+            </div>
+        </div>
+        </div>
+    }   
+</div>
