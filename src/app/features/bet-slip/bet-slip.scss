@@ -53,6 +53,9 @@
 .bet-selection h3{
   margin: 0;
   color: rgb(58, 170, 53);
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .bet-selection button{

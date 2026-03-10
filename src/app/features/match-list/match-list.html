@@ -13,8 +13,9 @@
         </div>
 
         <div class="match-card__teams">
-            <h3><img [src]="'/' + match.teams.a + '.png'" alt="maillot logo" class="team-jersey">
-                {{ match.teams.a }} vs {{ match.teams.b }}
+            <h3>
+            <img [src]="'/' + match.teams.a + '.png'" alt="maillot logo" class="team-jersey">
+            <span>{{ match.teams.a }} vs {{ match.teams.b }}</span>
             <img [src]="'/' + match.teams.b + '.png'" alt="maillot logo" class="team-jersey">
             </h3>
             <p>{{ match.startDate | date: 'dd/MM/yyyy HH:mm' }}</p>
