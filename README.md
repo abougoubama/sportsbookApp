@@ -72,7 +72,8 @@ The application displays a list of sports matches with their odds and allows the
 - Remove a selected odd by clicking on it again
 - Display the current bet slip
 - Enter a stake
-- Compute the potential gain
+- Compute the potential gain for each match
+- display the total gain (maybe)
 
 ## Tech stack
 
@@ -80,6 +81,8 @@ The application displays a list of sports matches with their odds and allows the
 - TypeScript
 - SCSS
 - RxJS
+- Jest 
+- npm 10.8.2
 
 - Angular standalone components
 

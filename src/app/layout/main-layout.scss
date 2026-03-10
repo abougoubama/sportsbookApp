@@ -7,8 +7,8 @@
 .page-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 12fr;
-  gap: 24px;
+  grid-template-rows: auto 1fr; 
+  gap: 20px;
   min-height: 100vh;
   padding: 12px;
   box-sizing: border-box;
@@ -38,7 +38,7 @@
   justify-content: center;
   flex-direction: row;
   height: 100%;
-  background-color:#147b45;
+  background-color:var(--color-main-header);
   border-radius:8px;
 }
 
@@ -50,10 +50,11 @@
   display: flex;
   gap: 20px;
   align-items: flex-end;
+  margin: 8px;
 }
 
 .navbar a.active {
-    background: #0e5f31  //var(--green-dark);
+    background: var(--color-green-dark);
 }
 
 .navbar a {

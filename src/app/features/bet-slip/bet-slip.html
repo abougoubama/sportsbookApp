@@ -17,21 +17,26 @@
                 <h3><img [src]="'/' + pari.libelleCote + '.png'" alt="maillot logo" class="team-jersey">
                 {{pari.libelleCote}}</h3>
             }@else{
-                <h3><span class="match-nul">match nul</span>
-                {{pari.libelleCote}}</h3>
+                <h3>
+                    <span class="match-nul">match nul</span>
+                    <span>{{pari.libelleCote}}</span>
+                </h3>
             }
             <button><span>{{pari.cote}}</span></button>
         </div>
 
         <div class="bet-mise">
+            <div>
             <input type="number" 
                 id="mise"
-                min="0" max="1000" 
+                min="0" 
+                max="999999" 
                 step="0.01" 
                 class="bet-input"
                 placeholder={{betSlipLabel.placeholderMise}}
                 (input)="sendMise($event, pari)"
             />
+            </div>
             <div class="bet-info-pari">
                 <span>{{betSlipLabel.gain}}:</span><span class="pari-selected">{{pari.gain |currency:'EUR':'symbol':'1.2-2'}}</span>
                 <span>{{betSlipLabel.mise}}:</span><span class="pari-selected">{{pari.mise | currency:'EUR':'symbol':'1.2-2'}}</span>

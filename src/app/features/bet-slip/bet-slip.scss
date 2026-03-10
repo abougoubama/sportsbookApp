@@ -47,6 +47,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 12px;
 }
 
 .bet-selection h3{
@@ -83,8 +84,9 @@ input:focus {
 
 .bet-info-pari{
   display:flex;
-  gap:16px;
+  gap:14px;
   align-items:center;
+  flex-wrap: wrap;
 }
 
 .pari-selected{
