@@ -15,7 +15,7 @@ Users can select odds, manage a bet slip, enter a stake, and see the potential g
 
 ## Application preview
 
-![SportsBookApp](docs/sportsbookAppImageReadME.png)
+![SportsBookApp](doc/sportsbookAppImageReadME.png)
 
 # Features
 
