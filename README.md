@@ -109,4 +109,7 @@ to see the unit tests.
 ```bash
 npm test -- --coverage
 ```
+## Author
+Bama Abougou  
+Devoteam
 
