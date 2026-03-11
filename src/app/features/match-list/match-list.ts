@@ -50,8 +50,8 @@ export class MatchList implements OnInit {
     libellePari: match.teams.a + " vs " + match.teams.b,
     libelleCote: this.getCote(match, typePari).libelleEquipe,
     cote: this.getCote(match, typePari).cote,
-    gain: currentSelection[match.id]?currentSelection[match.id].mise * cote : 0,
-    mise: currentSelection[match.id]?currentSelection[match.id].mise: 0,
+    gain: (currentSelection[match.id]?.mise ?? 0) * cote,
+    mise: currentSelection[match.id]?.mise ?? 0,
     misMax: false
   }
 
