@@ -88,9 +88,11 @@ Selections are stored using a structure keyed by **matchId** to ensure that only
 
 # Running the project
 
-Clone the repository and install dependencies:
+Clone the repository (perso or devoteam) and install dependencies:
 ```bash
-git clone https://gitlab.devolab.cloud/bama.anne-marie.abougou/fdj-sportbook.git
+git clone https://gitlab.devolab.cloud/bama.anne-marie.abougou/fdj-sportbook.git 
+# or
+git clone https://github.com/abougoubama/sportsbookApp.git
 npm install
 npm start or ng serve
 ```
