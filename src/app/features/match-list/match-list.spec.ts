@@ -38,6 +38,18 @@ const betSelection_mock : BetSelection = {
   misMax:false
 }
 
+const existingBetSelection_mock : BetSelection = {
+  matchId: "1",
+  matchLabel: "Ligue 1",
+  typePari: typePari,
+  libellePari: "PSG vs Marseille",
+  libelleCote:"PSG",
+  cote: 1.85,
+  gain:1850,
+  mise:1000,
+  misMax:false
+}
+
 
   class MockMatchService{
     getMatches(): Observable<Match[]> {
@@ -103,11 +115,28 @@ describe('MatchList', () => {
     expect(result.libelleEquipe).toBe("PSG");
   });
 
-  it('should get the event when the user select a different Odd awayWin for the same match', () => {
+  it('should get the event when the user selects a different Odd awayWin for the same match', () => {
+    const getCoteSpy = jest.spyOn(component, 'getCote');
     let typePari: TypePari = 'awayWin';
     const idSelectedMatch = match_mock.id;
     component.selectOdd(match_mock, typePari);
     expect(component.selectionsByMatchId[idSelectedMatch].cote).toBe(4.2);
     expect(component.selectionsByMatchId[idSelectedMatch].libellePari).toBe("PSG vs Marseille");
+    expect(getCoteSpy).toHaveBeenCalled();
+  });
+
+    it('should update the bet when the user changes the stake of a previous bet', () => {
+    const getCoteSpy = jest.spyOn(component, 'getCote');
+    const listSelectionMock :Record<string, BetSelection> = { 1: existingBetSelection_mock }
+    const mosckService = TestBed.inject(BetSlipService);
+    jest.spyOn(mosckService, 'getSelectionPariValue').mockReturnValue(listSelectionMock);
+    let typePari: TypePari = 'draw';
+    const idSelectedMatch = match_mock.id;
+    component.selectOdd(match_mock, typePari);
+    expect(component.selectionsByMatchId[idSelectedMatch].cote).toBe(3.4);
+    expect(component.selectionsByMatchId[idSelectedMatch].libellePari).toBe("PSG vs Marseille");
+    expect(component.selectionsByMatchId[idSelectedMatch].mise).toBe(1000);
+    expect(component.selectionsByMatchId[idSelectedMatch].gain).toBe(3400)
+    expect(getCoteSpy).toHaveBeenCalled();
   });
 });

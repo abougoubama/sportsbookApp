@@ -41,6 +41,7 @@ export class MatchList implements OnInit {
   }
 
   selectOdd(match: Match, typePari: TypePari):void {
+    const cote = this.getCote(match, typePari).cote;
     const currentSelection = this.betSlipService.getSelectionPariValue();
     const betSelection = {
     matchId: match.id,
@@ -49,7 +50,7 @@ export class MatchList implements OnInit {
     libellePari: match.teams.a + " vs " + match.teams.b,
     libelleCote: this.getCote(match, typePari).libelleEquipe,
     cote: this.getCote(match, typePari).cote,
-    gain: currentSelection[match.id]?currentSelection[match.id].gain: 0,
+    gain: currentSelection[match.id]?currentSelection[match.id].mise * cote : 0,
     mise: currentSelection[match.id]?currentSelection[match.id].mise: 0,
     misMax: false
   }
