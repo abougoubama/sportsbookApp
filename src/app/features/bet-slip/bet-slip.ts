@@ -16,12 +16,14 @@ export class BetSlip {
   betSlipLabel = BET_SLIP_LABELS;
 
   selectionPari$!:Observable<BetSelection[]>;
+  gainTotal$!:Observable<number>;
   gain: number = 0;
   MAX = 999999;
 
 
   constructor(private readonly betSlipService: BetSlipService){
     this.selectionPari$ = this.betSlipService.selectionsList$;
+    this.gainTotal$ = this.betSlipService.sommeGain$;
   }
 
   sendMise(event: Event, pari:BetSelection):void {

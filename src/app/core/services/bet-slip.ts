@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map } from 'rxjs';
+import { BehaviorSubject, map, filter } from 'rxjs';
 import { BetSelection } from '../models/bet-selection.model';
 
 @Injectable({
@@ -21,6 +21,24 @@ export class BetSlipService {
 readonly selectionsList$ = this.selections$.pipe(
   map((matchId) => Object.values(matchId))
 );
+
+readonly sommeGain$$ = this.selections$.pipe(
+  map((item)=>{
+    let betSelection = Object.values(item);
+    return betSelection.reduce((acc, selection)=> acc + selection.gain,0)
+  })
+)
+
+readonly sommeGain$ = this.selections$.pipe(
+  map((item)=> Object.values(item).reduce((acc, selection)=> acc + selection.gain,0))
+)
+
+//filtrer les gains inferior à 10 000 euros
+readonly sommeGainSup10000$ = this.selections$.pipe(
+  map((item)=> Object.values(item).reduce((acc, selection)=> acc + selection.gain,0)),
+  filter(total => total < 10000)
+)
+
 
 updateBetSelection(newBetSelection: BetSelection):void{
   const idToUpdate = newBetSelection.matchId;

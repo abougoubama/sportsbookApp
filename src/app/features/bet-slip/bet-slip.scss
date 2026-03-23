@@ -120,3 +120,16 @@ input:focus {
   color: var(--color-bet-input-content-error);
   font-size: smaller;
 }
+
+.gain{
+  border: 1px var(--color-bet-info-title) solid;
+  padding: 8px;
+  margin: 8px;
+  color: darkgreen;
+  font-size: large;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
