@@ -3,11 +3,11 @@ import { BetSlipService } from '../../core/services/bet-slip';
 import { Observable } from 'rxjs';
 import { BetSelection } from '../../core/models/bet-selection.model';
 import { CommonModule } from '@angular/common';
-import { BET_SLIP_LABELS} from '../../constants/constants-sportBookApp'
+import { BET_SLIP_LABELS } from '../../constants/constants-sportBookApp';
 
 @Component({
   selector: 'app-bet-slip',
-  standalone:true,
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './bet-slip.html',
   styleUrl: './bet-slip.scss',
@@ -15,19 +15,18 @@ import { BET_SLIP_LABELS} from '../../constants/constants-sportBookApp'
 export class BetSlip {
   betSlipLabel = BET_SLIP_LABELS;
 
-  selectionPari$!:Observable<BetSelection[]>;
-  gainTotal$!:Observable<number>;
+  selectionPari$!: Observable<BetSelection[]>;
+  gainTotal$!: Observable<number>;
   gain: number = 0;
   MAX = 999999;
 
-
-  constructor(private readonly betSlipService: BetSlipService){
+  constructor(private readonly betSlipService: BetSlipService) {
     this.selectionPari$ = this.betSlipService.selectionsList$;
     this.gainTotal$ = this.betSlipService.sommeGain$;
   }
 
-  sendMise(event: Event, pari:BetSelection):void {
-    const cote = pari.cote
+  sendMise(event: Event, pari: BetSelection): void {
+    const cote = pari.cote;
     const input = event.target as HTMLInputElement;
     let mise = Number(input.value);
 
@@ -35,15 +34,15 @@ export class BetSlip {
       this.gain = 0;
       pari.misMax = false;
       return;
-    }else if (mise > this.MAX) {
+    } else if (mise > this.MAX) {
       mise = this.MAX;
       input.value = Number(this.MAX).toString();
       pari.misMax = true;
-  } else {
-    pari.misMax = false;
-  }
+    } else {
+      pari.misMax = false;
+    }
     this.gain = mise * cote;
-    const newBetSelection = {...pari, gain:this.gain, mise: mise, miseMax:pari.misMax}
-    this.betSlipService.updateBetSelection(newBetSelection)
+    const newBetSelection = { ...pari, gain: this.gain, mise: mise, miseMax: pari.misMax };
+    this.betSlipService.updateBetSelection(newBetSelection);
   }
 }

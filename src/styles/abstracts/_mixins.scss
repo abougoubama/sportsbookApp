@@ -12,19 +12,19 @@
   flex-wrap: wrap;
 }
 
-@mixin flex-column($gap:0) {
+@mixin flex-column($gap: 0) {
   display: flex;
   flex-direction: column;
   gap: $gap;
 }
 
-@mixin flex-align($gap:0,$align:center) {
+@mixin flex-align($gap: 0, $align: center) {
   display: flex;
   align-items: $align;
   gap: $gap;
 }
 
-@mixin flex-align-wrap($gap:0,$align:center) {
+@mixin flex-align-wrap($gap: 0, $align: center) {
   display: flex;
   align-items: $align;
   gap: $gap;
@@ -37,7 +37,7 @@
   justify-content: center;
 }
 
-@mixin flex-row-between($gap: 0, $align: center, $justify:space-between, $wrap: nowrap) {
+@mixin flex-row-between($gap: 0, $align: center, $justify: space-between, $wrap: nowrap) {
   display: flex;
   align-items: $align;
   justify-content: $justify;

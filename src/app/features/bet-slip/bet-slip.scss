@@ -9,20 +9,19 @@
   @include flex-column(20px);
 }
 
-.selection-header{
+.selection-header {
   h2 {
-  margin: 0 0 8px;
-  color: var(--color-header-title);
+    margin: 0 0 8px;
+    color: var(--color-header-title);
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-header-subtitle);
+  }
 }
 
-p {
-  margin: 0;
-  color: var(--color-header-subtitle);
-}   
-
-}
-
-.bet-card{
+.bet-card {
   background: var(--color-backdroung-card);
   border-radius: $radius-md;
   padding: $spacing-xl;
@@ -30,43 +29,41 @@ p {
   border: 1px solid var(--color-border-card);
 }
 
-.bet-header{
+.bet-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   color: var(--color-bet-info-title);
 
-  h3{
-  margin: 0 0 6px;
+  h3 {
+    margin: 0 0 6px;
   }
 }
 
-
-.bet-selection{
+.bet-selection {
   @include flex-center-wrap(12px);
 
-  h3{
-  margin: 0;
-  color: var(--color-selection);
-  @include flex-align(4px, center);
+  h3 {
+    margin: 0;
+    color: var(--color-selection);
+    @include flex-align(4px, center);
+  }
+
+  .cote {
+    background: var(--color-bet-selection-cote);
+    color: var(--color-bet-selection-cote-text);
+    cursor: pointer;
+    padding: 10px 14px;
+    border-radius: $radius-xs;
+  }
 }
 
-.cote{
-  background: var(--color-bet-selection-cote);
-  color: var( --color-bet-selection-cote-text);
-  cursor: pointer;
-  padding: 10px 14px;
-  border-radius: $radius-xs;
-}
-}
-
-
-.bet-mise{
+.bet-mise {
   @include flex-center-wrap(8px);
 }
 
-.bet-input{
+.bet-input {
   border: 1px solid var(--color-bet-input);
   padding: 10px 14px;
   border-radius: $radius-xl;
@@ -77,38 +74,38 @@ input:focus {
   color: var(--color-bet-input-focus);
 }
 
-.bet-info-pari{
-  @include flex-align-wrap(14px , center);
+.bet-info-pari {
+  @include flex-align-wrap(14px, center);
 }
 
-.pari-selected{
-  font-weight:600;
+.pari-selected {
+  font-weight: 600;
   color: var(--color-bet-pari-selected);
 }
 
 .team-jersey {
-    width: auto;
-    height: 24px;
+  width: auto;
+  height: 24px;
 }
 
-.match-nul{
-    color: var(--color-bet-selection-cote-text);
-    background: var(--color-header-title);
-    padding: 10px 14px;
-    border-radius: $radius-xs;
-    font-size: xx-small;
+.match-nul {
+  color: var(--color-bet-selection-cote-text);
+  background: var(--color-header-title);
+  padding: 10px 14px;
+  border-radius: $radius-xs;
+  font-size: xx-small;
 }
 
-.input-content{
+.input-content {
   @include flex-column(4px);
 }
 
-.errorMsg{
+.errorMsg {
   color: var(--color-bet-input-content-error);
   font-size: smaller;
 }
 
-.gain{
+.gain {
   border: 1px var(--color-bet-info-title) solid;
   padding: $spacing-sm;
   margin: $spacing-sm;

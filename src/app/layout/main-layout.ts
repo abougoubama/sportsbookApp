@@ -4,11 +4,9 @@ import { BetSlip } from '../features/bet-slip/bet-slip';
 
 @Component({
   selector: 'app-main-layout',
-  standalone:true,
+  standalone: true,
   imports: [MatchList, BetSlip],
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.scss',
 })
-export class MainLayout {
-
-}
+export class MainLayout {}

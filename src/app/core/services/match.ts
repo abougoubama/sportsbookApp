@@ -7,9 +7,7 @@ import { MATCHES_MOCK } from '../mocks/match.mock';
   providedIn: 'root',
 })
 export class MatchService {
-
   getMatches(): Observable<Match[]> {
     return of(MATCHES_MOCK);
   }
-  
 }

@@ -1,46 +1,48 @@
 <div class="match-list">
   <div class="match-list__header">
-    <h2>{{matchListlabels.title}}</h2>
-    <p>{{matchListlabels.subtitle}}</p>
+    <h2>{{ matchListlabels.title }}</h2>
+    <p>{{ matchListlabels.subtitle }}</p>
   </div>
 
   <div class="match-list__content">
     @for (match of matches$ | async; track match.id) {
-        <article class="match-card">
+      <article class="match-card">
         <div class="match-card__top">
-            <span class="match-card__sport"><img class="icon-svg icon-svg--sport" alt="sport logo" [src]="'/' + match.sport + '.svg'"><span>{{ match.sport }}</span></span>
-            <span class="match-card__competition">{{ match.competition }}</span>
+          <span class="match-card__sport"
+            ><img
+              class="icon-svg icon-svg--sport"
+              alt="sport logo"
+              [src]="'/' + match.sport + '.svg'"
+            /><span>{{ match.sport }}</span></span
+          >
+          <span class="match-card__competition">{{ match.competition }}</span>
         </div>
 
         <div class="match-card__teams">
-            <h3>
-            <img [src]="'/' + match.teams.a + '.png'" alt="maillot logo" class="team-jersey">
+          <h3>
+            <img [src]="'/' + match.teams.a + '.png'" alt="maillot logo" class="team-jersey" />
             <span>{{ match.teams.a }} vs {{ match.teams.b }}</span>
-            <img [src]="'/' + match.teams.b + '.png'" alt="maillot logo" class="team-jersey">
-            </h3>
-            <p>{{ match.startDate | date: 'dd/MM/yyyy HH:mm' }}</p>
+            <img [src]="'/' + match.teams.b + '.png'" alt="maillot logo" class="team-jersey" />
+          </h3>
+          <p>{{ match.startDate | date: 'dd/MM/yyyy HH:mm' }}</p>
         </div>
 
         <div class="match-card__odds">
-            <button type="button" class="odd-button" (click)="selectOdd(match, 'homeWin')">
+          <button type="button" class="odd-button" (click)="selectOdd(match, 'homeWin')">
             {{ match.teams.a }} {{ match.odds.homeWin }}
+          </button>
+
+          @if (match.odds.draw !== undefined) {
+            <button type="button" class="odd-button" (click)="selectOdd(match, 'draw')">
+              Draw {{ match.odds.draw }}
             </button>
+          }
 
-            @if(match.odds.draw !== undefined){
-                <button
-                type="button"
-                class="odd-button"
-                (click)="selectOdd(match, 'draw')"
-                >
-                Draw {{ match.odds.draw }}
-                </button>
-            }
-
-            <button type="button" class="odd-button" (click)="selectOdd(match, 'awayWin')">
+          <button type="button" class="odd-button" (click)="selectOdd(match, 'awayWin')">
             {{ match.teams.b }} {{ match.odds.awayWin }}
-            </button>
+          </button>
         </div>
-        </article>
+      </article>
     }
   </div>
 </div>

@@ -1,4 +1,3 @@
-
 export interface Match {
   id: string;
   sport: string;
@@ -14,7 +13,7 @@ export interface Teams {
 }
 
 export interface Odds {
-  homeWin: number; 
+  homeWin: number;
   draw?: number;
-  awayWin: number; 
+  awayWin: number;
 }

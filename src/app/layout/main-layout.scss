@@ -11,7 +11,7 @@
   display: grid;
   gap: $spacing-xl;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto 1fr; 
+  grid-template-rows: auto 1fr;
   min-height: 100vh;
   padding: $spacing-md;
   box-sizing: border-box;
@@ -32,17 +32,16 @@
   }
 }
 
-.header{
+.header {
   grid-column: 1 / 3;
   grid-row: 1 / 2;
   @include flex-align-justify-center();
   height: 100%;
-  background-color:var(--color-main-header);
-  border-radius:$radius-xs;
+  background-color: var(--color-main-header);
+  border-radius: $radius-xs;
 }
 
-
-.header-unibet{
+.header-unibet {
   color: var(--color-header-unibet);
   font-family: inherit;
   font-style: normal;
@@ -50,9 +49,9 @@
   margin: $spacing-sm;
 }
 
-.navbar{
-   a {
-    color: var(--color-navbar); 
+.navbar {
+  a {
+    color: var(--color-navbar);
     display: block;
     padding: $spacing-sm $spacing-lg;
     font-size: 1.2em;
@@ -61,8 +60,7 @@
     border-radius: $radius-sm;
 
     &.active {
-    background: var(--color-green-dark);
-    } 
+      background: var(--color-green-dark);
+    }
   }
-
 }
