@@ -1,0 +1,20 @@
+@mixin flex-column($gap: 0) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin flex-center($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+@mixin flex-row-between($gap: 0, $align: center, $wrap: nowrap) {
+  display: flex;
+  align-items: $align;
+  justify-content: space-between;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
