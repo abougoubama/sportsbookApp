@@ -4,17 +4,43 @@
   gap: $gap;
 }
 
-@mixin flex-center($gap: 0) {
+@mixin flex-center-wrap($gap: 8) {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: $gap;
+  flex-wrap: wrap;
+}
+
+@mixin flex-column($gap:0) {
+  display: flex;
+  flex-direction: column;
   gap: $gap;
 }
 
-@mixin flex-row-between($gap: 0, $align: center, $wrap: nowrap) {
+@mixin flex-align($gap:0,$align:center) {
   display: flex;
   align-items: $align;
-  justify-content: space-between;
+  gap: $gap;
+}
+
+@mixin flex-align-wrap($gap:0,$align:center) {
+  display: flex;
+  align-items: $align;
+  gap: $gap;
+  flex-wrap: wrap;
+}
+
+@mixin flex-align-justify-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-row-between($gap: 0, $align: center, $justify:space-between, $wrap: nowrap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
   gap: $gap;
   flex-wrap: $wrap;
 }

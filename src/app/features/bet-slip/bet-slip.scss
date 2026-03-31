@@ -6,81 +6,70 @@
 }
 
 .selection-main-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  @include flex-column(20px);
 }
 
-.selection-header h2 {
+.selection-header{
+  h2 {
   margin: 0 0 8px;
   color: var(--color-header-title);
 }
 
-.selection-header p {
+p {
   margin: 0;
   color: var(--color-header-subtitle);
 }   
 
+}
+
 .bet-card{
   background: var(--color-backdroung-card);
-  border-radius: 12px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  border-radius: $radius-md;
+  padding: $spacing-xl;
+  @include flex-column(8px);
   border: 1px solid var(--color-border-card);
 }
 
 .bet-header{
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  color: var(--color-bet-info-title);
   flex-wrap: wrap;
+  color: var(--color-bet-info-title);
+
+  h3{
+  margin: 0 0 6px;
+  }
 }
 
-.bet-header h3{
-  margin: 0 0 6px;
-}
 
 .bet-selection{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-}
+  @include flex-center-wrap(12px);
 
-.bet-selection h3{
+  h3{
   margin: 0;
   color: var(--color-selection);
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  @include flex-align(4px, center);
 }
 
-.bet-selection .cote{
+.cote{
   background: var(--color-bet-selection-cote);
   color: var( --color-bet-selection-cote-text);
   cursor: pointer;
   padding: 10px 14px;
-  border-radius: 8px;
+  border-radius: $radius-xs;
+}
 }
 
+
 .bet-mise{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  flex-wrap: wrap;
+  @include flex-center-wrap(8px);
 }
 
 .bet-input{
   border: 1px solid var(--color-bet-input);
   padding: 10px 14px;
-  border-radius: 20px;
+  border-radius: $radius-xl;
 }
 
 input:focus {
@@ -89,10 +78,7 @@ input:focus {
 }
 
 .bet-info-pari{
-  display:flex;
-  gap:14px;
-  align-items:center;
-  flex-wrap: wrap;
+  @include flex-align-wrap(14px , center);
 }
 
 .pari-selected{
@@ -109,14 +95,12 @@ input:focus {
     color: var(--color-bet-selection-cote-text);
     background: var(--color-header-title);
     padding: 10px 14px;
-    border-radius: 8px;
+    border-radius: $radius-xs;
     font-size: xx-small;
 }
 
 .input-content{
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  @include flex-column(4px);
 }
 
 .errorMsg{
@@ -126,13 +110,10 @@ input:focus {
 
 .gain{
   border: 1px var(--color-bet-info-title) solid;
-  padding: 8px;
-  margin: 8px;
-  color: darkgreen;
+  padding: $spacing-sm;
+  margin: $spacing-sm;
+  color: var(--color-gain);
   font-size: large;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  border-radius: $radius-lg;
+  @include flex-align-justify-center();
 }
