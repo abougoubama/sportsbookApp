@@ -39,6 +39,9 @@ export class BetSlipService {
   updateBetSelection(newBetSelection: BetSelection): void {
     const idToUpdate = newBetSelection.matchId;
     this.selectionsSubject.value[idToUpdate] = { ...newBetSelection };
-    this.selectionsSubject.next(this.selectionsSubject.value);
+    this.selectionsSubject.next({
+      ...this.selectionsSubject.value,
+      [idToUpdate]: { ...newBetSelection },
+    });
   }
 }
